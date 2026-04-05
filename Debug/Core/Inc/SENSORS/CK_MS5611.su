@@ -1,0 +1,7 @@
+CK_MS5611.c:65:6:CK_MS5611_Init	24	static
+CK_MS5611.c:89:6:CK_MS5611_CycleUpdate	8	static
+CK_MS5611.c:121:6:CK_MS5611_Calculate	208	static
+CK_MS5611.c:156:6:CK_MS5611_ReadPROM	16	static
+CK_MS5611.c:176:6:CK_MS5611_SendCommand	16	static
+CK_MS5611.c:186:6:CK_MS5611_ReadADC	24	static
+CK_MS5611.c:214:5:CK_MS5611_IsOneCycleCompleted	4	static

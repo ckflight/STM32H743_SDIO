@@ -1,0 +1,2 @@
+CK_ESC.c:11:6:CK_ESC_Init	16	static
+CK_ESC.c:25:6:CK_ESC_SetMotor	24	static

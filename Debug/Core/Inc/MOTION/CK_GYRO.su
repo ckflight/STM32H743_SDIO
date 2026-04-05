@@ -1,0 +1,8 @@
+CK_GYRO.c:38:6:CK_GYRO_Init	24	static
+CK_GYRO.c:155:6:CK_GYRO_Update	24	static
+CK_GYRO.c:234:6:CK_GYRO_ResetGyroSum	4	static
+CK_GYRO.c:242:6:CK_GYRO_PerformCalibration	24	static
+CK_GYRO.c:298:6:CK_GYRO_LPFInit	32	static
+CK_GYRO.c:306:6:CK_GYRO_KalmanInit	32	static
+CK_GYRO.c:315:6:CK_GYRO_BiquadNotchInit	40	static
+CK_GYRO.c:340:6:CK_GYRO_CheckTimeout	8	static

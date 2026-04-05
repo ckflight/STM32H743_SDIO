@@ -1,0 +1,17 @@
+CK_MATH.c:4:7:CK_MATH_Constrainf	24	static
+CK_MATH.c:13:5:CK_MATH_Constrain	24	static
+CK_MATH.c:22:5:CK_MATH_Power	24	static
+CK_MATH.c:29:7:CK_MATH_Powerf	24	static
+CK_MATH.c:36:7:CK_MATH_Absf	16	static
+CK_MATH.c:43:9:CK_MATH_Abs	16	static
+CK_MATH.c:50:5:CK_MATH_ScaleRange	40	static
+CK_MATH.c:62:5:CK_MATH_ScaleRangeFloat	40	static
+CK_MATH.c:74:7:CK_MATH_Min	16	static
+CK_MATH.c:81:7:CK_MATH_SinApprox	24	static
+CK_MATH.c:93:7:CK_MATH_CosApprox	16	static
+CK_MATH.c:98:7:CK_MATH_Atan2Approx	48	static
+CK_MATH.c:121:7:CK_MATH_invSqrt	32	static
+CK_MATH.c:133:9:CK_MATH_ApplyDeadband	16	static
+CK_MATH.c:146:9:CK_MATH_ApplyDeadband2	16	static
+CK_MATH.c:159:9:quickMedianFilter3	48	static
+CK_MATH.c:168:9:CK_MATH_crc8_dvb_s2	24	static

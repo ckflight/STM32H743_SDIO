@@ -1,0 +1,14 @@
+../Core/Inc/CK_SPI.c:44:6:CK_SPI_Init	32	static
+../Core/Inc/CK_SPI.c:115:6:CK_SPI_Enable	16	static
+../Core/Inc/CK_SPI.c:121:6:CK_SPI_Disable	16	static
+../Core/Inc/CK_SPI.c:127:6:CK_SPI_EnableDMA	16	static
+../Core/Inc/CK_SPI.c:132:6:CK_SPI_DisableDMA	16	static
+../Core/Inc/CK_SPI.c:136:9:CK_SPI_WriteRegister	32	static
+../Core/Inc/CK_SPI.c:152:6:CK_SPI_ReadRegister	40	static
+../Core/Inc/CK_SPI.c:211:6:CK_SPI_ReadRegisterMulti	32	static
+../Core/Inc/CK_SPI.c:226:9:CK_SPI_Transfer	24	static
+../Core/Inc/CK_SPI.c:266:9:CK_SPI_WaitTransfer	16	static
+../Core/Inc/CK_SPI.c:281:5:CK_SPI_CheckInitialized	24	static
+../Core/Inc/CK_SPI.c:295:6:CK_SPI_TimeOutCounter	16	static
+../Core/Inc/CK_SPI.c:302:10:CK_SPI_GetTimeOut	24	static
+../Core/Inc/CK_SPI.c:313:6:CK_SPI_ResetTimeOut	16	static

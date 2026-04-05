@@ -1,0 +1,9 @@
+CK_FLASH.c:56:6:CK_FLASH_Init2	24	static
+CK_FLASH.c:81:6:CK_FLASH_Init	16	static
+CK_FLASH.c:94:9:CK_FLASH_WriteTestParameters	152	static
+CK_FLASH.c:131:9:CK_FLASH_WriteParameters	24	static
+CK_FLASH.c:163:9:CK_FLASH_ReadParameters	24	static
+CK_FLASH.c:187:6:CK_FLASH_Update	16	static
+CK_FLASH.c:215:6:CK_FLASH_TransferLog	4	static
+CK_FLASH.c:250:9:CK_FLASH_Write	24	static
+CK_FLASH.c:273:6:CK_FLASH_Read	24	static

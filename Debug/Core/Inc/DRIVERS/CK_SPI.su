@@ -1,0 +1,14 @@
+CK_SPI.c:45:6:CK_SPI_Init	184	static
+CK_SPI.c:177:6:CK_SPI_Enable	16	static
+CK_SPI.c:183:6:CK_SPI_Disable	16	static
+CK_SPI.c:189:6:CK_SPI_EnableDMA	16	static
+CK_SPI.c:194:6:CK_SPI_DisableDMA	16	static
+CK_SPI.c:198:9:CK_SPI_WriteRegister	32	static
+CK_SPI.c:239:6:CK_SPI_ReadRegisterMulti	32	static
+CK_SPI.c:286:9:CK_SPI_Transfer	160	static
+CK_SPI.c:358:9:CK_SPI_WaitTransfer	16	static
+CK_SPI.c:373:5:CK_SPI_CheckInitialized	24	static
+CK_SPI.c:396:6:CK_SPI_TimeOutCounter	16	static
+CK_SPI.c:412:10:CK_SPI_GetTimeOut	24	static
+CK_SPI.c:432:6:CK_SPI_ResetTimeOut	16	static
+CK_SPI.c:449:22:CK_SPI_GetClockRate	24	static

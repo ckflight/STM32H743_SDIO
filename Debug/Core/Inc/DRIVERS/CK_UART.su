@@ -1,0 +1,12 @@
+core_cm7.h:1902:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+CK_UART.c:17:6:CK_UART_Init	64	static
+CK_UART.c:210:6:CK_UART_DMAEnable	16	static
+CK_UART.c:215:6:CK_UART_DMADisable	16	static
+CK_UART.c:220:6:CK_UART_Reset	16	static
+CK_UART.c:229:6:CK_UART_SendPolling	16	static
+CK_UART.c:238:6:CK_UART_SendInterrupt	16	static
+CK_UART.c:245:6:CK_UART_ClearFlags	16	static
+CK_UART.c:250:6:CK_UART_TXEInterruptEnable	16	static
+CK_UART.c:254:6:CK_UART_TXEInterruptDisable	16	static
+CK_UART.c:258:6:CK_UART_TCInterruptEnable	16	static
+CK_UART.c:262:6:CK_UART_TCInterruptDisable	16	static

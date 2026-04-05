@@ -1,0 +1,9 @@
+CK_GPS.c:43:6:CK_GPS_Init	32	static
+CK_GPS.c:86:6:CK_GPS_Update	8	static
+CK_GPS.c:167:6:CK_GPS_WaitSatteliteFix	8	static
+CK_GPS.c:187:6:CK_GPS_SaveDestinationLocationAndStartHeight	16	static
+CK_GPS.c:208:6:CK_GPS_DecodePacket	4	static
+CK_GPS.c:282:6:CK_GPS_UBXNewByte	16	static
+CK_GPS.c:356:6:CK_GPS_CalculateDistanceAndHeading	40	static
+CK_GPS.c:371:6:CK_GPS_InitConfig	184	static
+CK_GPS.c:460:6:CK_GPS_SendUBXPacket	24	static

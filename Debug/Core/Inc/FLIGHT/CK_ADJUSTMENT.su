@@ -1,0 +1,9 @@
+core_cm7.h:2156:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+CK_ADJUSTMENT.c:60:6:CK_ADJUSTMENT_Init	88	static
+CK_ADJUSTMENT.c:96:6:CK_ADJUSTMENT_Update	8	static
+CK_ADJUSTMENT.c:151:5:CK_ADKUSTMENT_GetParameters	32	static
+CK_ADJUSTMENT.c:186:6:CK_ADJUSTMENT_SetPIDParameters	24	static
+CK_ADJUSTMENT.c:204:6:CK_ADJUSTMENT_SetOtherParameters	16	static
+CK_ADJUSTMENT.c:259:6:CK_ADJUSTMENT_SetAntiGravityParameters	4	static
+CK_ADJUSTMENT.c:265:6:CK_ADJUSTMENT_SaveParameters	144	static
+CK_ADJUSTMENT.c:299:9:CK_ADJUSTEMENT_IsAdjustmentModeOn	4	static

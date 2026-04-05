@@ -1,0 +1,7 @@
+CK_MSP.c:73:6:CK_MSP_DecodeInputStream	24	static
+CK_MSP.c:102:9:CK_MSP_GetMessage	40	static
+CK_MSP.c:228:6:CK_MSP_ProcessCommand	16	static
+CK_MSP.c:279:6:CK_MSP_SendResponse	248	static
+CK_MSP.c:1353:6:CK_MSP_WriteU8	16	static
+CK_MSP.c:1360:6:CK_MSP_WriteU16	16	static
+CK_MSP.c:1368:6:CK_MSP_WriteU32	16	static

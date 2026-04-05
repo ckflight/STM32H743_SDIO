@@ -1,0 +1,16 @@
+CK_RC.c:76:6:CK_RC_Init	8	static
+CK_RC.c:81:10:CK_RC_GetDefaultParameters	24	static
+CK_RC.c:122:6:CK_RC_UpdateTPAParameters	16	static
+CK_RC.c:132:6:CK_RC_LoadParameters	32	static
+CK_RC.c:198:6:CK_RC_Update	8	static
+CK_RC.c:214:6:CK_RC_UpdateRcRefreshRate	16	static
+CK_RC.c:224:6:CK_RC_CalculateRCCommand	16	static
+CK_RC.c:304:6:CK_RC_CalculateRCSetpoint	24	static
+CK_RC.c:337:7:CK_RC_ApplyBetaflightRates	40	static
+CK_RC.c:367:6:CK_RC_CalculateRCThrottlePIDAttenuation	16	static
+CK_RC.c:386:7:CK_RC_GetThrottlePIDAttenuation	4	static
+CK_RC.c:390:7:CK_RC_ApplyCurve	16	static
+CK_RC.c:395:7:CK_RC_GetRawSetpoint	16	static
+CK_RC.c:400:7:CK_RC_GetRcCommandDelta	16	static
+CK_RC.c:405:10:CK_RC_GetCurrentRxRefreshRate	4	static
+CK_RC.c:410:7:CK_RC_GetRcDeflectionAbs	16	static

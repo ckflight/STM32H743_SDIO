@@ -1,0 +1,5 @@
+CK_RGB.c:57:6:CK_RGB_Init	80	static
+CK_RGB.c:187:6:CK_RGB_LoadDmaBuffer	32	static
+CK_RGB.c:198:6:CK_RGB_Enable	4	static
+CK_RGB.c:207:6:CK_RGB_Start	16	static
+CK_RGB.c:228:6:DMA1_Stream4_IRQHandler	4	static

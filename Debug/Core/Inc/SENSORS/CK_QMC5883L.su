@@ -1,0 +1,4 @@
+CK_QMC5883L.c:37:6:CK_QMC5883L_Init	24	static
+CK_QMC5883L.c:66:6:CK_QMC5883L_AlignMag	24	static
+CK_QMC5883L.c:76:6:CK_QMC5883L_ReadMagRaw	16	static
+CK_QMC5883L.c:88:6:CK_QMC5883L_isMagSensorInitialized	4	static

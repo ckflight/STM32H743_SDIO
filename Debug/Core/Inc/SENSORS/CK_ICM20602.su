@@ -1,0 +1,8 @@
+CK_ICM20602.c:71:6:CK_ICM20602_GyroInit	40	static
+CK_ICM20602.c:126:6:CK_ICM20602_AccInit	32	static
+CK_ICM20602.c:157:6:CK_ICM20602_AlignGyro	24	static
+CK_ICM20602.c:166:6:CK_ICM20602_AlignAcc	24	static
+CK_ICM20602.c:176:6:CK_ICM20602_ReadGyroRaw	16	static
+CK_ICM20602.c:188:6:CK_ICM20602_ReadAccRaw	16	static
+CK_ICM20602.c:200:6:CK_ICM20602_isGyroSensorInitialized	4	static
+CK_ICM20602.c:205:6:CK_ICM20602_isAccSensorInitialized	4	static

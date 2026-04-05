@@ -1,0 +1,9 @@
+CK_ACC.c:45:6:CK_ACC_Init	32	static
+CK_ACC.c:160:6:CK_ACC_Init2	32	static
+CK_ACC.c:222:6:CK_ACC_Update	16	static
+CK_ACC.c:294:6:CK_ACC_ResetAccEarthSum	4	static
+CK_ACC.c:302:6:CK_ACC_ResetAccumulateSum	4	static
+CK_ACC.c:311:6:CK_ACC_PerformCalibration	40	static
+CK_ACC.c:363:6:CK_ACC_PerformCalibration_Z_Axis	16	static
+CK_ACC.c:407:6:CK_ACC_BiquadLPFInit	24	static
+CK_ACC.c:416:6:CK_ACC_CheckTimeout	8	static

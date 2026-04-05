@@ -1,0 +1,9 @@
+../Core/Src/main.c:166:5:main	304	static,ignoring_inline_asm
+../Core/Src/main.c:394:6:SDMMC1_IRQHandler	8	static
+../Core/Src/main.c:398:6:HAL_SD_RxCpltCallback	16	static
+../Core/Src/main.c:402:6:HAL_SD_TxCpltCallback	16	static
+../Core/Src/main.c:406:6:HAL_SD_ErrorCallback	16	static
+../Core/Src/main.c:410:6:CK_MICROCARD_AccessCardDetails	40	static
+../Core/Src/main.c:531:10:CK_MICROCARD_GetStartByteOfFile	32	static
+../Core/Src/main.c:650:9:Wait_SDCARD_Ready	16	static
+../Core/Src/main.c:667:6:Error_Handler	4	static,ignoring_inline_asm

@@ -1,0 +1,11 @@
+../Core/Inc/USBD_CDC/usb_device.c:24:6:CK_USBD_Init	8	static
+../Core/Inc/USBD_CDC/usb_device.c:49:5:CK_USBD_Transmit	8	static
+../Core/Inc/USBD_CDC/usb_device.c:60:5:CK_USBD_ReadData	16	static
+../Core/Inc/USBD_CDC/usb_device.c:70:5:CK_USBD_WriteRxBuffer	32	static
+../Core/Inc/USBD_CDC/usb_device.c:92:5:CK_USBD_WriteTxBuffer	16	static
+../Core/Inc/USBD_CDC/usb_device.c:103:6:CK_USBD_IntPrint	72	static
+../Core/Inc/USBD_CDC/usb_device.c:129:6:CK_USBD_IntPrintln	72	static
+../Core/Inc/USBD_CDC/usb_device.c:157:6:CK_USBD_FloatPrintln	72	dynamic
+../Core/Inc/USBD_CDC/usb_device.c:211:6:CK_USBD_FloatPrint	72	dynamic
+../Core/Inc/USBD_CDC/usb_device.c:264:6:CK_USBD_StringPrintln	24	static
+../Core/Inc/USBD_CDC/usb_device.c:273:6:CK_USBD_StringPrint	24	static

@@ -1,0 +1,9 @@
+CK_FILTERS.c:4:6:CK_FILTER_LPFInit	32	static
+CK_FILTERS.c:11:7:CK_FILTER_LPFApply	24	static
+CK_FILTERS.c:19:6:CK_FILTER_KalmanInit	32	static
+CK_FILTERS.c:35:7:CK_FILTER_KalmanApply	24	static
+CK_FILTERS.c:54:6:CK_FILTER_BiquadInit	72	static
+CK_FILTERS.c:96:7:CK_FILTER_BiquadFilterApply	32	static
+CK_FILTERS.c:107:7:CK_FILTER_getBiquadQ	32	static
+CK_FILTERS.c:114:6:CK_FILTER_LaggedMovingAverageInit	24	static
+CK_FILTERS.c:124:7:CK_FILTER_LaggedMovingAverageUpdate	24	static

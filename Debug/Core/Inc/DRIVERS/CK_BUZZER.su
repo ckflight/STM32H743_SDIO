@@ -1,0 +1,8 @@
+CK_BUZZER.c:24:6:CK_BUZZER_Init	24	static
+CK_BUZZER.c:92:6:CK_BUZZER_Activate	4	static
+CK_BUZZER.c:118:6:CK_BUZZER_Deactivate	4	static
+CK_BUZZER.c:154:6:CK_BUZZER_CheckBuzzer	8	static
+CK_BUZZER.c:166:6:CK_BUZZER_Tone1	16	static
+CK_BUZZER.c:187:6:CK_BUZZER_Tone2	16	static
+CK_BUZZER.c:210:6:CK_BUZZER_Tone3	16	static
+CK_BUZZER.c:231:6:CK_BUZZER_Tone4	16	static

@@ -1,0 +1,11 @@
+CK_ALTITUDE.c:45:6:CK_ALTITUDE_Update	16	static
+CK_ALTITUDE.c:62:6:CK_ALTITUDE_CalculateVelocityAndAltitude	40	static
+CK_ALTITUDE.c:162:9:CK_ALTITUDE_CalculateThrottleAdjustment_AltitudeHold	40	static
+CK_ALTITUDE.c:196:9:CK_ALTITUDE_CalculateThrottleAdjustment_Landing	40	static
+CK_ALTITUDE.c:228:6:CK_ALTITUDE_ApplyAltitudeHoldAdjustment	16	static
+CK_ALTITUDE.c:238:9:CK_ALTITUDE_GetEstimatedAltitude	4	static
+CK_ALTITUDE.c:242:9:CK_ALTITUDE_GetEstimatedVelocity	4	static
+CK_ALTITUDE.c:246:9:CK_ALTITUDE_GetThrottleAdjustment_AltitudeHold	4	static
+CK_ALTITUDE.c:250:9:CK_ALTITUDE_GetThrottleAdjustment_Landing	4	static
+CK_ALTITUDE.c:254:7:CK_ALTITUDE_GetAccVelocity	4	static
+CK_ALTITUDE.c:258:7:CK_ALTITUDE_GetFailsafeVelocity	4	static

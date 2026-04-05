@@ -1,0 +1,6 @@
+CK_OSD.c:45:6:CK_OSD_Init	16	static
+CK_OSD.c:86:6:CK_OSD_Update	16	static
+CK_OSD.c:134:6:CK_OSD_FormPacket	56	static
+CK_OSD.c:297:6:CK_OSD_SendPacketPolling	16	static
+CK_OSD.c:308:6:CK_OSD_SendPacketInterrupt	16	static
+CK_OSD.c:320:6:CK_OSD_ResetBuffer	16	static

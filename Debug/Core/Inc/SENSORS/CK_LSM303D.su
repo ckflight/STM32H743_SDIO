@@ -1,0 +1,8 @@
+CK_LSM303D.c:33:6:CK_LSM303D_AccInit	16	static
+CK_LSM303D.c:46:6:CK_LSM303D_MagInit	16	static
+CK_LSM303D.c:68:6:CK_LSM303D_AlignAcc	24	static
+CK_LSM303D.c:78:6:CK_LSM303D_AlignMag	24	static
+CK_LSM303D.c:88:6:CK_LSM303D_ReadAccRaw	24	static
+CK_LSM303D.c:107:6:CK_LSM303D_ReadMagRaw	24	static
+CK_LSM303D.c:124:6:CK_LSM303D_isAccSensorInitialized	4	static
+CK_LSM303D.c:129:6:CK_LSM303D_isMagSensorInitialized	4	static

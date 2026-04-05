@@ -1,0 +1,8 @@
+CK_ADC.c:13:6:CK_ADC_Init	24	static
+CK_ADC.c:42:6:CK_ADC_ADC1Init	16	static
+CK_ADC.c:62:6:CK_ADC_ADC2Init	16	static
+CK_ADC.c:80:6:CK_ADC_Update	8	static
+CK_ADC.c:100:7:CK_ADC_GetLipoResult	4	static
+CK_ADC.c:106:7:CK_ADC_GetCurrentResult	4	static
+CK_ADC.c:111:7:CK_ADC_GetTemperatureResult	4	static
+CK_ADC.c:117:6:CK_ADC_StartConversion	4	static

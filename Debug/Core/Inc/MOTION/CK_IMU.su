@@ -1,0 +1,13 @@
+CK_IMU.c:52:6:CK_IMU_Init	16	static
+CK_IMU.c:70:6:CK_IMU_UpdateSensors	8	static
+CK_IMU.c:111:6:CK_IMU_Update	8	static
+CK_IMU.c:136:6:CK_IMU_CalculateGain	24	static
+CK_IMU.c:166:6:CK_IMU_MahonyUpdate_2Axis	48	static
+CK_IMU.c:261:6:CK_IMU_MahonyUpdate_3Axis	120	static
+CK_IMU.c:388:6:CK_IMU_MadwickUpdate_2Axis	96	static
+CK_IMU.c:482:6:CK_IMU_MadwickUpdate_3Axis	152	static
+CK_IMU.c:599:6:CK_IMU_ComputeEulerAngles	8	static
+CK_IMU.c:630:6:CK_IMU_ComputeRotationMatrix	4	static
+CK_IMU.c:646:6:CK_IMU_ComputeAcceleration	24	static
+CK_IMU.c:678:6:CK_IMU_RotateBodyToEarthFrame	32	static
+CK_IMU.c:694:7:CK_IMU_AccLowPassFilterRCTimeConstant	16	static

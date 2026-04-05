@@ -1,0 +1,7 @@
+CK_SBUS.c:26:6:CK_SBUS_Init	40	static
+CK_SBUS.c:46:5:CK_SBUS_Update	24	static
+CK_SBUS.c:87:6:CK_SBUS_Process	16	static
+CK_SBUS.c:108:6:CK_SBUS_Decode	4	static
+CK_SBUS.c:141:6:CK_SBUS_NewByte	16	static
+CK_SBUS.c:165:6:CK_SBUS_IsReady	4	static
+CK_SBUS.c:169:5:CK_SBUS_GetChannelRaw	16	static

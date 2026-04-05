@@ -1,0 +1,7 @@
+CK_BAROMETER.c:37:6:CK_BAROMETER_Init	24	static
+CK_BAROMETER.c:83:6:CK_BAROMETER_Update	8	static
+CK_BAROMETER.c:143:10:CK_BAROMETER_RecalculateTotal	32	static
+CK_BAROMETER.c:167:9:CK_BAROMETER_ApplyMedianFilter	24	static
+CK_BAROMETER.c:189:6:CK_BAROMETER_PerformBaroCalibration	16	static
+CK_BAROMETER.c:262:9:CK_BAROMETER_CalculateAltitude	16	static
+CK_BAROMETER.c:274:6:CK_BAROMETER_CheckTimeout	8	static
