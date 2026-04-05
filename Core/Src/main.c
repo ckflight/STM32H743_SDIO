@@ -139,12 +139,19 @@ uint8_t read_done = 0;
 uint32_t compare_error_count = 0;
 uint32_t compare_checked_bytes = 0;
 
-#define LED1_GPIO					GPIOD
-#define LED1_GPIO_PIN				12
 
+// ADL5801 MIXER
+#define MIXER_EN_GPIO				GPIOE
+#define MIXER_EN_PIN				14
 
-#define LED2_GPIO					GPIOD
-#define LED2_GPIO_PIN				13
+#define PA_EN_GPIO					GPIOE
+#define PA_EN_PIN					12
+
+#define STAT_LED_GPIO				GPIOE
+#define STAT_LED_PIN				13
+
+#define RAMP_SWITCH_GPIO			GPIOD
+#define RAMP_SWITCH_PIN				13
 
 
 typedef enum{
@@ -162,6 +169,13 @@ typedef enum{
 SAMPLING_STATES_E sampling_state = SEND_DATA;
 
 uint8_t test_data = 0x01; // data to be written and read
+
+
+// With single block write 10000 block took 31.4 seconds
+// Multiwrite 512 times x ( 450 multiwrite x 512 byte per sector ) takes 6.44 sec so 18 MB/sec
+
+// Writing fast is about sending data in big size at once
+// If we write with dma one block at a time then it still need around 3millisec to open close write
 
 int main(void){
 
@@ -231,26 +245,28 @@ int main(void){
 	//CK_MICROCARD_AccessCardDetails();
 	card.START_SECTOR = 40000; // I did not put a file on sdcard so an offset is set
 
-	CK_GPIO_ClockEnable(LED1_GPIO);
-	CK_GPIO_Init(LED1_GPIO, LED1_GPIO_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
-	CK_GPIO_SetPin(LED1_GPIO, LED1_GPIO_PIN);
+	// Radar's hardware is used. Power it with battery.
+	__HAL_RCC_GPIOE_CLK_ENABLE();
 
-	CK_GPIO_Init(LED2_GPIO, LED2_GPIO_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
-	CK_GPIO_SetPin(LED2_GPIO, LED2_GPIO_PIN);
+	CK_GPIO_Init(STAT_LED_GPIO, STAT_LED_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
+	CK_GPIO_SetPin(STAT_LED_GPIO, STAT_LED_PIN);
 
-	// With single block write 10000 block took 31.4 seconds
-	// Multiwrite 512 times x ( 450 multiwrite x 512 byte per sector ) takes 6.44 sec so 18 MB/sec
+	CK_GPIO_Init(RAMP_SWITCH_GPIO, RAMP_SWITCH_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
+	CK_GPIO_SetPin(RAMP_SWITCH_GPIO, RAMP_SWITCH_PIN);
 
-	// Writing fast is about sending data in big size at once
-	// If we write with dma one block at a time then it still need around 3millisec to open close write
+	CK_GPIO_Init(MIXER_EN_GPIO, MIXER_EN_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
+	CK_GPIO_ClearPin(MIXER_EN_GPIO, MIXER_EN_PIN); // mixer disabled
+
+	CK_GPIO_Init(PA_EN_GPIO, PA_EN_PIN, CK_GPIO_OUTPUT_PP, CK_GPIO_NOAF, CK_GPIO_VERYHIGH, CK_GPIO_NOPUPD);
+	CK_GPIO_ClearPin(PA_EN_GPIO, PA_EN_PIN); // pa disabled
+
+	// Load write array with a test data to check if write is correct with sector read
+	for(int i = 0; i < 512 * NUMBER_OF_SECTORS_TO_WRITE; i++){
+		writeCache[i] = test_data;
+	}
 
 	time1 = CK_TIME_GetMilliSec();
 
-	for(int i = 0; i < 512 * NUMBER_OF_SECTORS_TO_WRITE; i++){
-
-		writeCache[i] = test_data;
-
-	}
 
 #define USE_DMA
 
@@ -269,7 +285,7 @@ int main(void){
 
 					is_tx_dma_done = 0;
 
-					CK_GPIO_TogglePin(LED1_GPIO, LED1_GPIO_PIN);
+					CK_GPIO_TogglePin(STAT_LED_GPIO, STAT_LED_PIN);
 
 					loop_counter++;
 
@@ -319,7 +335,7 @@ int main(void){
 				if(!write_done){
 					time2 = CK_TIME_GetMilliSec() - time1;
 					write_done = 1;
-					CK_GPIO_ClearPin(LED1_GPIO, LED1_GPIO_PIN);
+					CK_GPIO_ClearPin(STAT_LED_GPIO, STAT_LED_PIN);
 					sampling_state = WAIT_SOME_TIME;
 				}
 			}
@@ -334,7 +350,7 @@ int main(void){
 
 		case READ_SECTORS:
 
-			CK_GPIO_TogglePin(LED2_GPIO, LED2_GPIO_PIN);
+			CK_GPIO_TogglePin(STAT_LED_GPIO, STAT_LED_PIN);
 
 			Wait_SDCARD_Ready(); // This is very important!!!
 
@@ -372,7 +388,7 @@ int main(void){
 
 			if(rx_sector_counter >= tx_sector_counter){
 				read_done = 1;
-				CK_GPIO_ClearPin(LED2_GPIO, LED2_GPIO_PIN);
+				CK_GPIO_ClearPin(STAT_LED_GPIO, STAT_LED_PIN);
 				sampling_state = DONE;
 			}
 			else{
@@ -383,9 +399,7 @@ int main(void){
 			break;
 
 		case DONE:
-
-			CK_GPIO_TogglePin(LED1_GPIO, LED1_GPIO_PIN);
-			CK_GPIO_TogglePin(LED2_GPIO, LED2_GPIO_PIN);
+			CK_GPIO_TogglePin(STAT_LED_GPIO, STAT_LED_PIN);
 			CK_TIME_DelayMilliSec(100);
 
 			break;
