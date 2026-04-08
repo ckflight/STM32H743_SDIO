@@ -120,11 +120,11 @@ microcard_parameters_t card = {
 int is_tx_dma_done = 1;
 int is_rx_dma_done = 0;
 
-#define NUMBER_OF_SECTORS_TO_WRITE		450
+#define NUMBER_OF_SECTORS_TO_WRITE		420 // higher gives more speed like 450
 
 uint8_t writeCache[512 * NUMBER_OF_SECTORS_TO_WRITE] __attribute__ ((aligned (32)));
 
-#define NUMBER_OF_SECTORS_TO_READ	256
+#define NUMBER_OF_SECTORS_TO_READ	420
 uint8_t rx_array[512 * NUMBER_OF_SECTORS_TO_READ] __attribute__ ((aligned (32)));
 
 uint32_t time_buffer[10000];
@@ -168,7 +168,7 @@ typedef enum{
 
 SAMPLING_STATES_E sampling_state = SEND_DATA;
 
-uint8_t test_data = 0x01; // data to be written and read
+uint32_t test_data_counter = 0;
 
 
 // With single block write 10000 block took 31.4 seconds
@@ -242,8 +242,8 @@ int main(void){
 
 	HAL_SD_ConfigSpeedBusOperation(&hsd1, SDMMC_SPEED_MODE_AUTO);
 
-	//CK_MICROCARD_AccessCardDetails();
-	card.START_SECTOR = 40000; // I did not put a file on sdcard so an offset is set
+	CK_MICROCARD_AccessCardDetails();
+	//card.START_SECTOR = 40000; // I did not put a file on sdcard so an offset is set
 
 	// Radar's hardware is used. Power it with battery.
 	__HAL_RCC_GPIOE_CLK_ENABLE();
@@ -261,8 +261,11 @@ int main(void){
 	CK_GPIO_ClearPin(PA_EN_GPIO, PA_EN_PIN); // pa disabled
 
 	// Load write array with a test data to check if write is correct with sector read
-	for(int i = 0; i < 512 * NUMBER_OF_SECTORS_TO_WRITE; i++){
-		writeCache[i] = test_data;
+	for(int i = 0; i < NUMBER_OF_SECTORS_TO_WRITE; i++){
+		for(int j = 0; j < 512; j++){
+			writeCache[i*512 + j] = test_data_counter;
+		}
+		test_data_counter++;
 	}
 
 	time1 = CK_TIME_GetMilliSec();
@@ -290,21 +293,6 @@ int main(void){
 					loop_counter++;
 
 					Wait_SDCARD_Ready(); // This is very important!!!
-
-					// I put some different data at some point to see if checking writing really works
-					if(loop_counter == 250){
-						for(int i = 0; i < 512 * NUMBER_OF_SECTORS_TO_WRITE; i++){
-
-							writeCache[i] = 0xAB;
-						}
-					}
-					// Data has to be corrected again
-					if(loop_counter == 251){
-						for(int i = 0; i < 512 * NUMBER_OF_SECTORS_TO_WRITE; i++){
-
-							writeCache[i] = test_data;
-						}
-					}
 
 					// Clean before tx operation when dcache is enabled
 					// Buffer is filled by cpu to cache so flush it to sram with cleandcache method for dma to send it to peripheral
@@ -335,6 +323,7 @@ int main(void){
 				if(!write_done){
 					time2 = CK_TIME_GetMilliSec() - time1;
 					write_done = 1;
+					test_data_counter = 0;
 					CK_GPIO_ClearPin(STAT_LED_GPIO, STAT_LED_PIN);
 					sampling_state = WAIT_SOME_TIME;
 				}
@@ -376,14 +365,17 @@ int main(void){
 			SCB_InvalidateDCache_by_Addr((uint32_t*)rx_array, (512 * NUMBER_OF_SECTORS_TO_READ));
 
 			// Compare received array with tx array
-			for(uint32_t i = 0; i < (512 * NUMBER_OF_SECTORS_TO_READ); i++){
-				if(rx_array[i] != test_data){
-					compare_error_count++;
+			for(int i = 0; i < NUMBER_OF_SECTORS_TO_READ; i++){
+				for(int j = 0; j < 512; j++){
+					if(rx_array[i*512 + j] != test_data_counter){
+						compare_error_count++;
+					}
+					compare_checked_bytes++;
 				}
-				compare_checked_bytes++;
+				test_data_counter++;
 			}
 
-
+			test_data_counter = 0; // write cach with 512 x 256 byte size is sent 400 times so reset counter
 			rx_sector_counter += NUMBER_OF_SECTORS_TO_READ;
 
 			if(rx_sector_counter >= tx_sector_counter){
@@ -497,7 +489,7 @@ void CK_MICROCARD_AccessCardDetails(void){
      */
 
     // Even if the name of file is flight_log.txt this is how it is stored
-    uint8_t filename_to_look[11] = {'F','L','I','G','H','T','~','1','T','X','T'};
+    uint8_t filename_to_look[11] = {'F','L','I','G','H','T','~','1','B','I','N'};
     uint16_t start_byte_of_file = CK_MICROCARD_GetStartByteOfFile(rx_array, filename_to_look);
 
     for(int i = 0; i < 11; i++){
